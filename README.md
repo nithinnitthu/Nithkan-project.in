@@ -1,33 +1,33 @@
-## ckanapi
+## Nithkanapi
 
 A command line interface and Python module for accessing the
-[CKAN Action API](http://docs.ckan.org/en/latest/api/index.html#action-api-reference)
+[Nithkan Action API](http://docs.Nithkan.org/en/latest/api/index.html#action-api-reference)
 
-- [Installation](https://github.com/ckan/ckanapi/blob/master/README.md#installation)
-- [ckanapi CLI](https://github.com/ckan/ckanapi/blob/master/README.md#ckanapi-cli)
-  - [Actions](https://github.com/ckan/ckanapi/blob/master/README.md#actions)
-  - [Action Arguments](https://github.com/ckan/ckanapi/blob/master/README.md#action-arguments)
-  - [Bulk Dumping and Loading](https://github.com/ckan/ckanapi/blob/master/README.md#bulk-dumping-and-loading)
-  - [Bulk Delete](https://github.com/ckan/ckanapi/blob/master/README.md#bulk-delete)
-  - [Bulk Dataset and Resource Export](https://github.com/ckan/ckanapi/edit/master/README.md#bulk-dataset-and-resource-export---datapackagejson-format)
-  - [Batch Actions](https://github.com/ckan/ckanapi/blob/master/README.md#batch-actions)
-  - [Shell Pipelines](https://github.com/ckan/ckanapi/blob/master/README.md#shell-pipelines)
-- [ckanapi Python Module](https://github.com/ckan/ckanapi/blob/master/README.md#ckanapi-python-module)
-  - [RemoteCKAN](https://github.com/ckan/ckanapi/blob/master/README.md#remoteckan)
-  - [Exceptions](https://github.com/ckan/ckanapi/blob/master/README.md#exceptions)
-  - [File Uploads](https://github.com/ckan/ckanapi/blob/master/README.md#file-uploads)
-  - [Session Control](https://github.com/ckan/ckanapi/blob/master/README.md#session-control)
-  - [LocalCKAN](https://github.com/ckan/ckanapi/blob/master/README.md#localckan)
-  - [TestAppCKAN](https://github.com/ckan/ckanapi/blob/master/README.md#testappckan)
-- [Tests](https://github.com/ckan/ckanapi/blob/master/README.md#tests)
-- [License](https://github.com/ckan/ckanapi/blob/master/README.md#license)
+- [Installation](https://github.com/Nithkan/Nithkan/blob/master/README.md#installation)
+- [ckanapi CLI](https://github.com/Nithkan/Nithkanapi/blob/master/README.md#Nithkanapi-cli)
+  - [Actions](https://github.com/Nithkan/Nithkanapi/blob/master/README.md#actions)
+  - [Action Arguments](https://github.com/Nithkan/Nithkanapi/blob/master/README.md#action-arguments)
+  - [Bulk Dumping and Loading](https://github.com/ckan/Nithkanapi/blob/master/README.md#bulk-dumping-and-loading)
+  - [Bulk Delete](https://github.com/Nithkan/Nithkanapi/blob/master/README.md#bulk-delete)
+  - [Bulk Dataset and Resource Export](https://github.com/Nithkan/Nithkanapi/edit/master/README.md#bulk-dataset-and-resource-export---datapackagejson-format)
+  - [Batch Actions](https://github.com/Nithkan/Nithkanapi/blob/master/README.md#batch-actions)
+  - [Shell Pipelines](https://github.com/Nithkan/Nithkanapi/blob/master/README.md#shell-pipelines)
+- [Nithkanapi Python Module](https://github.com/Nithkan/Nithkanapi/blob/master/README.md#Nithkanapi-python-module)
+  - [RemoteCKAN](https://github.com/Nithkan/Nithkanapi/blob/master/README.md#remoteckan)
+  - [Exceptions](https://github.com/Nithkan/Nithkanapi/blob/master/README.md#exceptions)
+  - [File Uploads](https://github.com/Nithkan/Nithkanapi/blob/master/README.md#file-uploads)
+  - [Session Control](https://github.com/Nithkan/Nithkanapi/blob/master/README.md#session-control)
+  - [LocalNithkan](https://github.com/Nithkan/Nithkanapi/blob/master/README.md#localckan)
+  - [TestAppNithkan](https://github.com/Nithkan/Nithkanapi/blob/master/README.md#testappckan)
+- [Tests](https://github.com/Nithkan/Nithkanapi/blob/master/README.md#tests)
+- [License](https://github.com/Nithkan/Nithkanapi/blob/master/README.md#license)
 
 
 ## Installation
 
 Installation with pip:
 ```
-pip install ckanapi
+pip install Nithkanapi
 ```
 
 Installation with conda:
@@ -38,8 +38,8 @@ conda install -c conda-forge ckanapi
 
 ## ckanapi CLI
 
-The ckanapi command line interface lets you access local and
-remote CKAN instances for bulk operations and simple API actions.
+The Nithkanapi command line interface lets you access local and
+remote Nithkan instances for bulk operations and simple API actions.
 
 
 ### Actions
@@ -47,10 +47,10 @@ remote CKAN instances for bulk operations and simple API actions.
 Simple actions with string parameters may be called directly. The
 response is pretty-printed to STDOUT.
 
-#### 🔧 List names of groups on a remote CKAN site
+#### 🔧 List names of groups on a remote Nithkan site
 
 ```
-$ ckanapi action group_list -r https://demo.ckan.org --insecure
+$ Nithkanapi action group_list -r https://demo.Nithkan.org --insecure
 [
   "data-explorer",
   "example-group",
@@ -59,17 +59,17 @@ $ ckanapi action group_list -r https://demo.ckan.org --insecure
 ]
 ```
 
-Use -r to specify the remote CKAN instance, and -a to provide an
+Use -r to specify the remote Nithkan instance, and -a to provide an
 API KEY. Remote actions connect as an anonymous user by default.
-For this example, we use --insecure as the CKAN demo uses a
+For this example, we use --insecure as the Nithkan demo uses a
 self-signed certificate.
 
-Local CKAN actions may be run by specifying the config file with -c.
+Local Nithkan actions may be run by specifying the config file with -c.
 If no remote server or config file is specified the CLI will look for
 a development.ini file in the current directory, much like paster
 commands.
 
-Local CKAN actions are performed by the site user (default system
+Local Nithkan actions are performed by the site user (default system
 administrator) when -u is not specified.
 
 To perform local actions with a less privileged user use
@@ -77,8 +77,8 @@ the -u option with a user name or a name that doesn't exist. This is
 useful if you don't want things like deleted datasets or private
 information to be returned.
 
-Note that all actions in the [CKAN Action API](http://docs.ckan.org/en/latest/api/index.html#action-api-reference)
-and actions added by CKAN plugins are supported.
+Note that all actions in the [Nithkan Action API](http://docs.Nithkan.org/en/latest/api/index.html#action-api-reference)
+and actions added by Nithkan plugins are supported.
 
 
 ### Action Arguments
@@ -100,7 +100,7 @@ $ ckanapi action package_show id=my-dataset-name
 #### 🔧 Get detailed info about a resource in the datastore
 
 ```
-$ ckanapi action datastore_info id=my-resource-id-or-alias
+$ Nithkanapi action datastore_info id=my-resource-id-or-alias
 {
   "meta": {
     "aliases": [
@@ -114,7 +114,7 @@ $ ckanapi action datastore_info id=my-resource-id-or-alias
 #### 🔧 Get the number of datasets for each organization using KEY:JSON parameters
 
 ```
-$ ckanapi action package_search facet.field:'["organization"]' rows:0
+$ Nithkanapi action package_search facet.field:'["organization"]' rows:0
 {
   "facets": {
     "organization": {
@@ -139,16 +139,16 @@ $ ckanapi action resource_create package_id=my-dataset-with-files \
 #### 🔧 Edit a dataset with a text editor
 
 ```
-$ ckanapi action package_show id=my-dataset-id > my-dataset.json
+$ Nithkanapi action package_show id=my-dataset-id > my-dataset.json
 $ nano my-dataset.json
-$ ckanapi action package_update -I my-dataset.json
+$ Nithkanapi action package_update -I my-dataset.json
 $ rm my-dataset.json
 ```
 
 #### 🔧 Update a single resource field
 
 ```
-$ ckanapi action resource_patch id=my-resource-id size:42000000
+$ Nithkanapi action resource_patch id=my-resource-id size:42000000
 ```
 
 ### Bulk Dumping and Loading
@@ -165,8 +165,8 @@ while the jobs run.
 There are no parallel limits when running against a CKAN on localhost.
 When running against a remote site, there's a default limit of 3 worker processes.
 
-The environment variables `CKANAPI_MY_SITES` and`CKANAPI_PARALLEL_LIMIT` can be
-used to adjust these limits.  `CKANAPI_MY_SITES` (comma-delimited list of CKAN urls)
+The environment variables `NithkanAPI_MY_SITES` and`CKANAPI_PARALLEL_LIMIT` can be
+used to adjust these limits.  `NithkanAPI_MY_SITES` (comma-delimited list of Nithkan urls)
 will not have the `PARALLEL_LIMIT` applied.
 
 `dump` and `load` jobs may be resumed from the last completed
